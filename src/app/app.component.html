@@ -1,9 +1,15 @@
-<div class="container p-4">
+<main  role="main" class="container p-4">
   <div class="text-center">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Logo-Tinder.svg/800px-Logo-Tinder.svg.png"
          alt="..." height="50px"/>
   </div>
-  <div class="row mt-5">
+  <div class="text-center mt-5">
+    <small class="text-muted">Sprawdź ostatnie 10 wejść na Twoje konto Tinder bez konta premium !
+      <br/> Jak pobrać token ? Instrukcje znajdziesz w <b>punkcie numer 4 </b>w
+      <a href="https://github.com/mikorys/TinderLikeImagesDownloader" target="_blank">tym linku</a>
+    </small>
+  </div>
+  <div class="row mt-2">
     <div class="col-12">
       <div class="input-group input-group-lg">
         <input type="text" class="form-control form-control-lg" placeholder="Podaj token Tinder" #token>
@@ -21,14 +27,9 @@
       </div>
     </div>
   </div>
-
-  <div class="card-deck mt-5" *ngIf="users">
+  <div class="card-columns mt-5" *ngIf="users">
     <div class="card shadow" style="width: 18rem;" *ngFor="let user of users">
-      <img [src]="users.photos[0].url" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Dane usera</h5>
-        {{user | json}}
-      </div>
+      <img [src]="user.user.photos[0].url" class="card-img-top" alt="...">
     </div>
   </div>
-</div>
+</main>
